@@ -29,7 +29,7 @@ public class UserRegistration {
         registration.validateUserDetails(mobileNumber);
 
         registration=new Password();
-        System.out.println("Enter password having at least 8 characters, at least 1 Upper case letter, at least 1 Numeric : ");
+        System.out.println("Enter password having at least 8 characters, at least 1 Upper case letter, at least 1 Number and exactly 1 Special Character : ");
         password=sc.nextLine();
         registration.validateUserDetails(password);
 

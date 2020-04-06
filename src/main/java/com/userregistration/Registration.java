@@ -51,8 +51,8 @@ class Mobile implements Registration {
 class Password implements Registration {
     /* Validating password */
     public void validateUserDetails(String password) {
-        String PASSWORD_AT_LEAST_ONE_NUMBER="((?=.*[a-z])(?=.*[0-9])(?=.*[A-Z]).{8,20})";
-        if(password.matches(PASSWORD_AT_LEAST_ONE_NUMBER)) {
+        String PASSWORD_PATTERN="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*?&]*[$#@!%*?&][^$@!#%*?&]*$).{8,}";;
+        if(password.matches(PASSWORD_PATTERN)) {
             System.out.println("Valid Password");
         }
         else {
