@@ -6,10 +6,7 @@ public class UserRegistration {
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome To User Registration");
         Scanner sc=new Scanner(System.in);
-        String firstName;
-        String lastName;
-        String emailId;
-        String mobileNumber;
+        String firstName, lastName, emailId, mobileNumber,password;
 
         //Reference of interface
         Registration registration=new Name();
@@ -30,5 +27,10 @@ public class UserRegistration {
         System.out.println("Enter Mobile Number : ");
         mobileNumber=sc.nextLine();
         registration.validateUserDetails(mobileNumber);
+
+        registration=new Password();
+        System.out.println("Enter password having at least 8 characters : ");
+        password=sc.nextLine();
+        registration.validateUserDetails(password);
     }
 }

@@ -47,3 +47,17 @@ class Mobile implements Registration {
     }
 }
 
+/* Class for Password */
+class Password implements Registration {
+    /* Validating password */
+    public void validateUserDetails(String password) {
+        String PASSWORD_AT_LEAST_EIGHT_CHARACTER_LONG="[a-z]{8,}";
+        if(password.matches(PASSWORD_AT_LEAST_EIGHT_CHARACTER_LONG)) {
+            System.out.println("Valid Password");
+        }
+        else {
+            System.out.println("Invalid Password");
+        }
+    }
+}
+
