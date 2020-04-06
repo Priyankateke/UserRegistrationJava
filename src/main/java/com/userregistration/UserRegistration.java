@@ -8,6 +8,7 @@ public class UserRegistration {
         Scanner sc=new Scanner(System.in);
         String firstName;
         String lastName;
+        String emailId;
 
         //Reference of interface
         Registration registration=new Name();
@@ -18,5 +19,10 @@ public class UserRegistration {
         System.out.println("Enter Last Name : ");
         lastName=sc.nextLine();
         registration.validateUserDetails(lastName);
+
+        registration=new Email();
+        System.out.println("Enter Email Id : ");
+        emailId=sc.nextLine();
+        registration.validateUserDetails(emailId);
     }
 }
