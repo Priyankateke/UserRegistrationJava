@@ -32,3 +32,18 @@ class Email implements Registration {
         }
     }
 }
+
+/* Class for Mobile */
+class Mobile implements Registration {
+    /* Validating Mobile Format */
+    public void validateUserDetails(String mobileNumber) {
+        String MOBILE_NUMBER_PATTERN="^[0-9]{1,3}[' '][0-9]{10}$";
+        if(mobileNumber.matches(MOBILE_NUMBER_PATTERN)) {
+            System.out.println("Valid Mobile Number");
+        }
+        else {
+            System.out.println("Invalid Mobile Number");
+        }
+    }
+}
+

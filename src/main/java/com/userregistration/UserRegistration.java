@@ -9,6 +9,7 @@ public class UserRegistration {
         String firstName;
         String lastName;
         String emailId;
+        String mobileNumber;
 
         //Reference of interface
         Registration registration=new Name();
@@ -24,5 +25,10 @@ public class UserRegistration {
         System.out.println("Enter Email Id : ");
         emailId=sc.nextLine();
         registration.validateUserDetails(emailId);
+
+        registration=new Mobile();
+        System.out.println("Enter Mobile Number : ");
+        mobileNumber=sc.nextLine();
+        registration.validateUserDetails(mobileNumber);
     }
 }
