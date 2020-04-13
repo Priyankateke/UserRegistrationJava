@@ -6,10 +6,15 @@ public class UserRegistration {
     public static void main(String[] args) throws Exception {
         System.out.println("Welcome To User Registration");
         Scanner sc=new Scanner(System.in);
-        String firstName, lastName, emailId, mobileNumber,password;
+        String firstName;
+        String lastName;
+        String emailId;
+        String mobileNumber;
+        String password;
 
         //Reference of interface
         Registration registration=new Name();
+
         System.out.println("Enter First Name : ");
         firstName=sc.nextLine();
         registration.validateUserDetails(firstName);
@@ -32,6 +37,5 @@ public class UserRegistration {
         System.out.println("Enter password having at least 8 characters, at least 1 Upper case letter, at least 1 Number and exactly 1 Special Character : ");
         password=sc.nextLine();
         registration.validateUserDetails(password);
-
     }
 }

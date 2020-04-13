@@ -10,11 +10,14 @@ class Name implements Registration {
     /* Validating User Name */
     public void validateUserDetails(String userName) {
         String NAME_PATTERN="^[A-Z][a-z]{2,}$";
-        if(userName.matches(NAME_PATTERN)) {
-            System.out.println("Valid Name");
-        }
-        else {
-            System.out.println("Invalid Input");
+        try {
+            if (userName.matches(NAME_PATTERN)) {
+                System.out.println("Valid Name");
+            }
+            else
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_DETAILS,"Invalid Details");
+        } catch (NullPointerException | UserRegistrationException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
@@ -24,12 +27,16 @@ class Email implements Registration {
     /* Validating Email Id */
     public void validateUserDetails(String emailId) {
         String EMAIL_PATTERN = "^([a-zA-Z]{3,}([.|_|+|-]?[a-zA-Z0-9]+)?[@][a-zA-Z0-9]+[.][a-zA-Z]{2,3}([.]?[a-zA-Z]{2,3})?)$";
-        if(emailId.matches(EMAIL_PATTERN)) {
-            System.out.println("Valid Email Id");
+        try {
+            if (emailId.matches(EMAIL_PATTERN)) {
+                System.out.println("Valid Email Id");
+            }
+            else
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_DETAILS,"Invalid Details");
+        } catch (NullPointerException | UserRegistrationException e) {
+            System.out.println(e.getMessage());
         }
-        else {
-            System.out.println("Invalid Email Id");
-        }
+
     }
 }
 
@@ -38,11 +45,13 @@ class Mobile implements Registration {
     /* Validating Mobile Format */
     public void validateUserDetails(String mobileNumber) {
         String MOBILE_NUMBER_PATTERN="^[0-9]{1,3}[' '][0-9]{10}$";
-        if(mobileNumber.matches(MOBILE_NUMBER_PATTERN)) {
-            System.out.println("Valid Mobile Number");
-        }
-        else {
-            System.out.println("Invalid Mobile Number");
+        try {
+            if (mobileNumber.matches(MOBILE_NUMBER_PATTERN)) {
+                System.out.println("Valid Mobile Number");
+            } else
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_DETAILS, "Invalid Details");
+        } catch (NullPointerException | UserRegistrationException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
@@ -51,13 +60,14 @@ class Mobile implements Registration {
 class Password implements Registration {
     /* Validating password */
     public void validateUserDetails(String password) {
-        String PASSWORD_PATTERN="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*?&]*[$#@!%*?&][^$@!#%*?&]*$).{8,}";;
-        if(password.matches(PASSWORD_PATTERN)) {
-            System.out.println("Valid Password");
-        }
-        else {
-            System.out.println("Invalid Password");
+        String PASSWORD_PATTERN = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=[^$@!#%*?&]*[$#@!%*?&][^$@!#%*?&]*$).{8,}";
+        try {
+            if (password.matches(PASSWORD_PATTERN)) {
+                System.out.println("Valid Password");
+            } else
+                throw new UserRegistrationException(UserRegistrationException.ExceptionType.INVALID_DETAILS, "Invalid Details");
+        } catch (NullPointerException | UserRegistrationException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
-
